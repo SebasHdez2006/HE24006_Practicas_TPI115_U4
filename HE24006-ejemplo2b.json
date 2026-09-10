@@ -1,0 +1,45 @@
+{
+	"pais": {
+		"a": {
+			"_href": "index.html",
+			"__prefix": "html",
+			"__text": "Volver al Menú Principal"
+		},
+		"br": {
+			"__prefix": "html"
+		},
+		"idiomas": {
+			"oficial": "Español",
+			"autoctono": "Nahuat",
+			"segundoIdioma": "Inglés"
+		},
+		"departamento": [
+			{
+				"altura": "545 MSNM",
+				"_id": "1",
+				"_nombre": "San Salvador",
+				"_cabecera": "San Salvador",
+				"_habitantes": "1700000"
+			},
+			{
+				"altura": "665 MSNM",
+				"_id": "2",
+				"_nombre": "Santa Ana",
+				"_cabecera": "Santa Ana",
+				"_habitantes": "523655"
+			},
+			{
+				"altura": "129 MSNM",
+				"_id": "3",
+				"_nombre": "San Miguel",
+				"_cabecera": "San Miguel",
+				"_habitantes": "478792"
+			}
+		],
+		"_xmlns:html": "http://www.w3.org/1999/xhtml",
+		"_nombre": "El Salvador",
+		"_moneda": "Dólar estadounidense",
+		"_codigoTelefonico": "+503",
+		"_areaTerritorial": "21041 km2"
+	}
+}

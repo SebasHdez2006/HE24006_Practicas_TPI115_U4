@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="HE24006-ejemplo1.css"?>
+<!-- ejemplo1.xml HE24006, Nombre: David Sebastián Hernández Elías -->
+<fichero xmlns:html="http://www.w3.org/1999/xhtml">
+    
+    <html:a href="index.html">Volver al Menú Principal</html:a>
+    <html:br/>
+
+    <ficha id="1" fechaingreso="1/11/2012">
+        <nombre>Antonio</nombre>
+        <apellido>Barbero</apellido>
+        <direccion>Calle de Los Andes, 45</direccion>
+    </ficha>
+</fichero>

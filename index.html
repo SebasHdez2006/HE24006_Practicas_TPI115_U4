@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 3.1 XML - HE24006</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1a4a76;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 16px;
+            border-bottom: 2px solid #e0e6ed;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor Superior con CSS Grid para 3 columnas exactas */
+        .panel-superior {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        /* Estilos de la columna de Datos Personales */
+        .datos p {
+            margin: 8px 0;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .datos strong {
+            color: #2c3e50;
+        }
+
+        .imagen-diagrama {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .imagen-diagrama img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Estilos para las tarjetas de ejercicios */
+        .ejercicio-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .ejercicio-card p {
+            margin: 0 0 8px 0;
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .enlaces {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 2px 4px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1abc9c;
+        }
+
+        /* Panel Inferior: Conclusiones */
+        .panel-conclusiones {
+            background: #eafaf1;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 6px solid #2ecc71;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .panel-conclusiones h2 {
+            border-bottom-color: #badcba;
+            color: #1e8449;
+        }
+
+        .pregunta {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .respuesta {
+            color: #555;
+            margin-top: 5px;
+            font-size: 13px;
+        }
+
+        /* Adaptabilidad para pantallas pequeñas */
+        @media (max-width: 850px) {
+            .panel-superior {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Laboratorio 3.1: Documentos XML Bien Formados</h1>
+
+        <!-- Panel Superior Blanco (3 Columnas) -->
+        <div class="panel-superior">
+
+            <!-- Columna 1: Datos -->
+            <div class="datos">
+                <h2>Datos Personales</h2>
+                <p><strong>Nombre: </strong>David Sebastián Hernández Elías</p>
+                <p><strong>Carnet: </strong>HE24006</p>
+                <p><strong>Materia: </strong>Técnicas de Programación para Internet</p>
+
+                <div class="imagen-diagrama">
+                    <img src="webplatform-venndiagram.svg" alt="Diagrama de Tecnologías Web">
+                </div>
+            </div>
+
+            <!-- Columna 2: Fichas Personales -->
+            <div>
+                <h2>Sección 1: Fichas Personales</h2>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 1:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo1.xml">XML</a> |
+                        <a href="HE24006-ejemplo1.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo1.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 1a:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo1a.xml">XML</a> |
+                        <a href="HE24006-ejemplo1a.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo1a.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 1b:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo1b.xml">XML</a> |
+                        <a href="HE24006-ejemplo1b.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo1b.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 3: Geografía -->
+            <div>
+                <h2>Sección 2: Geografía</h2>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 2:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo2.xml">XML</a> |
+                        <a href="HE24006-ejemplo2.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo2.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 2a:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo2a.xml">XML</a> |
+                        <a href="HE24006-ejemplo2a.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo2a.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+
+                <div class="ejercicio-card">
+                    <p>Ejercicio 2b:</p>
+                    <div class="enlaces">
+                        <a href="HE24006-ejemplo2b.xml">XML</a> |
+                        <a href="HE24006-ejemplo2b.json" target="_blank">JSON</a> |
+                        <a href="HE24006-ejemplo2b.css" target="_blank">CSS</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Panel Inferior: Conclusiones -->
+        <div class="panel-conclusiones">
+            <h2>Preguntas y Conclusiones del Laboratorio</h2>
+
+            <div class="pregunta">1. ¿A partir del ejemplo 1 y ejercicios desarrollados hasta el momento qué puede concluir?</div>
+            <div class="respuesta">Puedo concluir que XML es extremadamente flexible ya que nos permite inventar y anidar nuestras propias etiquetas sin depender de un estándar estricto previo. Siempre que respetemos las reglas de documento "bien formado" (etiquetas de apertura y cierre correctas, anidamiento lógico), los datos quedan perfectamente estructurados y jerarquizados.</div>
+
+            <div class="pregunta">2. ¿A partir del ejemplo 2 y ejercicios desarrollados hasta el momento qué puede concluir?</div>
+            <div class="respuesta">Se concluye que el diseño de un documento XML requiere un análisis lógico. Es vital distinguir qué información debe ir como un atributo (datos simples que describen al elemento, como el ID o la moneda general de un país) y qué información debe ir como un elemento hijo, asegurando que la jerarquía refleje la realidad conceptual de los datos.</div>
+
+            <div class="pregunta">3. ¿A partir de los ejercicios desarrollados en esta sección II.3 (Conversión a JSON) qué puede concluir?</div>
+            <div class="respuesta">Concluyo que JSON es una alternativa mucho más ligera y compacta para el intercambio de datos. Al realizar la conversión online, los elementos XML se transforman eficientemente en pares de "clave: valor", demostrando que JSON es más directo de leer para las máquinas, aunque XML ofrece una semántica más robusta a través de sus atributos.</div>
+
+            <div class="pregunta">4. ¿A partir de los ejercicios de CSS desarrollados, qué puede concluir?</div>
+            <div class="respuesta">Se concluye que las hojas de estilo en cascada (CSS) son esenciales para dotar de presentación visual a un documento de datos puro como XML. Mediante propiedades como 'display' podemos controlar el flujo visual, y usando selectores avanzados de CSS3 logramos superar la limitación natural de XML de no mostrar sus atributos en pantalla.</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

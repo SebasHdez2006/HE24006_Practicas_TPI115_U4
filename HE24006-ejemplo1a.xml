@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="HE24006-ejemplo1a.css"?>
+<!-- ejercicio1a.xml HE24006, Nombre: David Sebastián Hernández Elías -->
+<fichero xmlns:html="http://www.w3.org/1999/xhtml">
+    
+    <html:a href="index.html">Volver al Menú Principal</html:a>
+    
+    <ficha id="1" fechaingreso="1/11/2012">
+        <nombre>Antonio</nombre>
+        <apellido>Barbero</apellido>
+        <direccion>Calle de Los Andes, 45</direccion>
+    </ficha>
+
+    <ficha id="2" fechaingreso="10/09/2026">
+        <nombre>David Sebastián</nombre>
+        <apellido>Hernández Elías</apellido>
+        <direccion>Soyapango, San Salvador Este</direccion>
+        <contacto>
+            <telefono tipo="celular">7020-0980</telefono>
+            <email>he24006@ues.edu.sv</email>
+            <website url="http://xml.he24006.tpi"/>
+        </contacto>
+    </ficha>
+
+</fichero>

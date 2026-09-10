@@ -1,0 +1,30 @@
+/* HE24006-ejercicio1.css - David Sebastián Hernández Elías */
+fichero {
+    background-color: blue;
+    display: block;
+    padding: 20px;
+}
+ficha {
+    background-color: red;
+    display: block;
+    margin: 10px;
+    padding: 10px;
+}
+nombre {
+    color: white;
+    display: inline;
+}
+apellido {
+    color: yellow;
+    display: inline;
+}
+direccion {
+    color: yellow;
+    font-size: 1cm;
+    display: none;
+}
+ficha::before {
+    content: "Ficha ID: " attr(id) " - ";
+    color: black;
+    font-weight: bold;
+}
