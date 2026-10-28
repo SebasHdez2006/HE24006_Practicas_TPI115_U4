@@ -24,7 +24,7 @@ function muestraContenido() {
   if(peticion_http.readyState == 4) {
      if(peticion_http.status == 200) {
        var texto=peticion_http.responseText;
-       window.document.getElementById('cuerpo').innerHTML=texto;       
+      window.document.getElementById('contenidoAjax').innerHTML=texto;
      }
    }
  }
@@ -35,11 +35,19 @@ function muestraContenido() {
 #cuerpo  {border-style:solid;border-color:red;}
 }
 </style>
+<link rel="stylesheet" type="text/css" href="../navigation.css" />
 </head>
-<!-- se ha usado un id para identificar al cuerpo desde javascript -->
-<!-- e insertar el texto de respuesta en el tag body -->
-<body id="cuerpo">
-<!-- TOME NOTA DE QUE ESTE DOCUMENTO ES UN DOCUMENTO VACIO -->
+<body>
+<nav class="site-navigation" aria-label="Navegación entre prácticas">
+  <a class="site-navigation__home" href="../index.html">Inicio</a>
+  <a href="../HE24006-Ajax/index.html" aria-current="page">44b AJAX</a>
+  <a href="../HE24006-APIFetch/index.html">44c Fetch</a>
+  <a href="../HE24006-FileAPI/index.html">44d File API</a>
+  <a href="../HE24006-ApiTest/TEST_API_FETCH.html">61a APIs</a>
+  <a href="../HE24006-ApiWebsite/index.html">61b Catálogo REST</a>
+</nav>
+<!-- se conserva la barra y se inserta la respuesta AJAX en este contenedor -->
+<main id="cuerpo"><div id="contenidoAjax"></div></main>
 </body>
 
 </html>

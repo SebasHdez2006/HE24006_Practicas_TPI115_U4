@@ -1,0 +1,75 @@
+/* Navegación compartida para las prácticas TPI115 de HE24006. */
+nav.practice-nav,
+nav.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem max(1rem, calc((100% - 72rem) / 2));
+  color: #e7f4ff;
+  background: #031d38;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.3;
+}
+
+nav.practice-nav .practice-nav__label {
+  margin-right: 0.25rem;
+  color: #a9dbff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+nav.practice-nav a,
+nav.site-navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  color: #f7fbff;
+  font-size: 0.88rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+nav.practice-nav a:hover,
+nav.practice-nav a:focus-visible,
+nav.site-navigation a:hover,
+nav.site-navigation a:focus-visible {
+  border-color: #91d4ff;
+  color: #fff;
+  background: #0a568d;
+  outline: none;
+}
+
+nav.practice-nav a[aria-current="page"],
+nav.site-navigation a[aria-current="page"] {
+  border-color: #5cb8ec;
+  color: #02233f;
+  background: #c8ecff;
+}
+
+nav.practice-nav a:focus-visible,
+nav.site-navigation a:focus-visible {
+  box-shadow: 0 0 0 3px #f8bf3c;
+}
+
+@media (max-width: 44rem) {
+  nav.practice-nav,
+  nav.site-navigation {
+    justify-content: flex-start;
+    padding: 0.6rem 0.75rem;
+  }
+
+  nav.practice-nav .practice-nav__label {
+    width: 100%;
+  }
+
+  nav.practice-nav a,
+  nav.site-navigation a {
+    font-size: 0.8rem;
+  }
+}
