@@ -6,7 +6,7 @@
 
 ## Texto para entregar en Campus
 
-Enlace del sitio publicado: **[agregar aquí la URL de GitHub Pages al finalizar la publicación]**
+Enlace del sitio publicado: **https://sebashdez2006.github.io/xml-tpi-he24006/HE24006_Practicas_TPI115/**
 
 1. Las solicitudes asíncronas permiten actualizar partes concretas de una interfaz sin recargar toda la página, por lo que mejoran la interacción y reducen trabajo innecesario del navegador.
 2. XMLHttpRequest permite comprender el ciclo HTTP de bajo nivel; Fetch ofrece una sintaxis basada en promesas más clara, pero exige verificar `response.ok` porque un error HTTP no siempre rechaza la promesa.
