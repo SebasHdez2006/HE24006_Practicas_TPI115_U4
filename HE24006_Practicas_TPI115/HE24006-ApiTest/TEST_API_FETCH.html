@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Práctica guiada de Fetch API y APIs REST para TPI115.">
+    <title>Guía 61a | Fetch API y APIs REST</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <img class="school-logo" src="imagenes/logo_eisi1.jpg" alt="Logo de la Escuela de Ingeniería de Sistemas Informáticos">
+        <div>
+          <p class="eyebrow">Universidad de El Salvador · Facultad de Ingeniería y Arquitectura</p>
+          <h1>Guía de laboratorio 61a</h1>
+          <p class="subtitle">Testeo de Web Services desde la consola JavaScript con Fetch API</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="student-card" aria-labelledby="student-title">
+        <div>
+          <p class="section-kicker">Técnicas de Programación en Internet</p>
+          <h2 id="student-title">Práctica de consumo de APIs REST</h2>
+          <p>Este sitio permite ejecutar de forma controlada las consultas y ejercicios planteados en la guía.</p>
+        </div>
+        <dl>
+          <div><dt>Estudiante</dt><dd>David Sebastián Hernández Elías</dd></div>
+          <div><dt>Carnet</dt><dd>HE24006</dd></div>
+          <div><dt>Asignatura</dt><dd>TPI115</dd></div>
+        </dl>
+      </section>
+
+      <section class="notice" aria-label="Uso seguro de la práctica">
+        <strong>Uso controlado:</strong> la página no realiza ninguna petición al cargar. Las operaciones de escritura (POST, PUT, PATCH y DELETE) solo se ejecutan después de un clic explícito y una confirmación.
+      </section>
+
+      <section class="panel" aria-labelledby="public-api-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Parte II · Lectura con GET</p>
+            <h2 id="public-api-title">Consultas a APIs públicas</h2>
+          </div>
+          <p>Selecciona un ejercicio para enviar una solicitud Fetch y ver su resultado.</p>
+        </div>
+
+        <div class="api-grid">
+          <article class="api-card">
+            <h3>Usuario aleatorio</h3>
+            <p>Consulta Random User y muestra nombre, correo e imagen.</p>
+            <button class="button button-primary" type="button" data-public-action="random-user">Obtener usuario</button>
+            <div id="random-user-result" class="result-card" aria-live="polite">
+              <p class="placeholder">Aún no se ha realizado la consulta.</p>
+            </div>
+          </article>
+
+          <article class="api-card">
+            <h3>Dirección IP pública</h3>
+            <p>Consulta IPify y muestra la dirección IP de la conexión actual.</p>
+            <button class="button button-primary" type="button" data-public-action="public-ip">Consultar IP</button>
+            <div id="public-ip-result" class="result-card" aria-live="polite">
+              <p class="placeholder">Aún no se ha realizado la consulta.</p>
+            </div>
+          </article>
+
+          <article class="api-card">
+            <h3>Precio de Bitcoin</h3>
+            <p>Consulta Coinlore y muestra la cotización disponible en dólares.</p>
+            <button class="button button-primary" type="button" data-public-action="bitcoin">Consultar Bitcoin</button>
+            <div id="bitcoin-result" class="result-card" aria-live="polite">
+              <p class="placeholder">Aún no se ha realizado la consulta.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="crud-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Parte III · CRUD con API REST</p>
+            <h2 id="crud-title">Demostración de empleados</h2>
+          </div>
+          <p>API de práctica: <a href="https://retoolapi.dev/JevzJv/empleados" target="_blank" rel="noopener noreferrer">retoolapi.dev/JevzJv/empleados</a></p>
+        </div>
+
+        <div class="crud-layout">
+          <div class="read-controls">
+            <h3>Lectura de recursos</h3>
+            <div class="button-row">
+              <button class="button button-primary" id="load-employees" type="button">GET: listar empleados</button>
+              <button class="button button-secondary" id="load-employee" type="button">GET: buscar por ID</button>
+            </div>
+            <label for="employee-id">ID de empleado</label>
+            <input id="employee-id" name="employee-id" inputmode="numeric" autocomplete="off" placeholder="Ej. 1">
+            <p class="helper-text">Use el ID para consultar, actualizar o eliminar un empleado. Solo elimine registros que usted haya creado.</p>
+          </div>
+
+          <form id="employee-form" class="employee-form">
+            <h3>Datos para una operación de escritura</h3>
+            <p class="helper-text">Complete los campos que correspondan. Para PATCH puede enviar únicamente los valores que desea cambiar.</p>
+            <div class="form-grid">
+              <label>Nombre<input id="employee-name" name="name" autocomplete="name" placeholder="Nombre del empleado"></label>
+              <label>Correo<input id="employee-email" name="email" type="email" autocomplete="email" placeholder="correo@ejemplo.com"></label>
+              <label>Empresa<input id="employee-company" name="company" autocomplete="organization" placeholder="Empresa"></label>
+              <label>Cargo<input id="employee-jobtitle" name="jobtitle" autocomplete="organization-title" placeholder="Cargo"></label>
+            </div>
+            <div class="button-row mutation-actions">
+              <button class="button button-success" type="button" data-crud-action="create">POST: crear</button>
+              <button class="button button-warning" type="button" data-crud-action="replace">PUT: reemplazar</button>
+              <button class="button button-warning" type="button" data-crud-action="update">PATCH: actualizar</button>
+              <button class="button button-danger" type="button" data-crud-action="delete">DELETE: eliminar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="table-wrap" tabindex="0" aria-label="Resultados de empleados">
+          <table>
+            <caption>Resultados de las consultas GET</caption>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Cargo</th>
+              </tr>
+            </thead>
+            <tbody id="employees-table-body">
+              <tr><td colspan="5" class="placeholder">Sin resultados. Use una operación GET para cargar empleados.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel console-panel" aria-labelledby="console-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Consola visual</p>
+            <h2 id="console-title">Detalle de las peticiones</h2>
+          </div>
+          <button class="button button-secondary" id="clear-console" type="button">Limpiar consola</button>
+        </div>
+        <p id="request-status" class="status-message" role="status">Listo para realizar una consulta.</p>
+        <pre id="visual-console" aria-live="polite">[Inicio] No se han realizado peticiones automáticamente.</pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>HE24006 · Técnicas de Programación en Internet · Guía 61a</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Catálogo de productos con Fetch API para la guía 61b de TPI115." />
+    <title>Guía 61b | Catálogo API REST | HE24006</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <script src="codigo.js" defer></script>
+  </head>
+  <body data-estudiante="HE24006">
+    <header class="encabezado" id="guia-61b-he24006">
+      <p class="eyebrow">TPI115 · Guía 61b</p>
+      <h1>Catálogo de productos con API REST</h1>
+      <p class="subtitulo">Consulta asíncrona a Fake Store API con filtros, ordenamiento y calificación de productos.</p>
+      <dl class="datos-estudiante">
+        <div><dt>Estudiante</dt><dd>David Sebastián Hernández Elías</dd></div>
+        <div><dt>Carnet</dt><dd>HE24006</dd></div>
+        <div><dt>Asignatura</dt><dd>Técnicas de Programación en Internet</dd></div>
+      </dl>
+    </header>
+
+    <main class="contenedor">
+      <section class="panel introduccion" aria-labelledby="inicio-titulo">
+        <div>
+          <p class="eyebrow">Programación Front-End usando Web APIs</p>
+          <h2 id="inicio-titulo">Productos disponibles</h2>
+          <p>Presiona el botón para consumir una API REST pública mediante <code>fetch</code>. La tabla incluye el precio, la categoría y la calificación de cada producto.</p>
+        </div>
+        <button class="boton-primario" id="obtener-productos" type="button">Obtener productos</button>
+      </section>
+
+      <p class="estado" id="estado" role="status" aria-live="polite">Aún no se ha realizado una consulta.</p>
+
+      <section class="panel controles" id="controles" hidden aria-label="Filtros del catálogo">
+        <fieldset>
+          <legend>Filtrar por categoría</legend>
+          <label><input type="checkbox" value="electronics" checked /> Electrónicos</label>
+          <label><input type="checkbox" value="jewelery" checked /> Joyería</label>
+          <label><input type="checkbox" value="men's clothing" checked /> Ropa para caballero</label>
+          <label><input type="checkbox" value="women's clothing" checked /> Ropa para dama</label>
+        </fieldset>
+        <p class="ayuda">Selecciona las categorías que deseas ver. Haz clic en una imagen para verla en tamaño mayor y en el encabezado de precio para alternar el orden ascendente y descendente.</p>
+      </section>
+
+      <section class="tabla-contenedor" id="listado" hidden aria-labelledby="catalogo-titulo">
+        <h2 class="sr-only" id="catalogo-titulo">Catálogo de productos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Producto</th>
+              <th scope="col">Categoría</th>
+              <th scope="col"><button class="boton-orden" id="ordenar-precio" type="button" aria-label="Ordenar por precio">Precio <span aria-hidden="true">↕</span></button></th>
+              <th scope="col">Calificación</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <dialog id="visor-imagen" aria-labelledby="titulo-visor">
+      <button class="cerrar-visor" id="cerrar-visor" type="button" aria-label="Cerrar imagen ampliada">×</button>
+      <h2 id="titulo-visor"></h2>
+      <img id="imagen-ampliada" alt="" />
+    </dialog>
+
+    <footer><p>Guía 61b · HE24006 · David Sebastián Hernández Elías · TPI115</p></footer>
+  </body>
+</html>

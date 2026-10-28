@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portafolio de prácticas de Técnicas de Programación en Internet TPI115." />
+    <title>Prácticas TPI115 | HE24006</title>
+    <link rel="stylesheet" href="portal.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="limitado">
+        <p class="etiqueta">Universidad de El Salvador · TPI115</p>
+        <h1>Prácticas de Programación en Internet</h1>
+        <p class="resumen">Portafolio de las guías 44b, 44c, 44d, 61a y 61b sobre peticiones asíncronas, File API y APIs REST.</p>
+        <dl class="ficha">
+          <div><dt>Estudiante</dt><dd>David Sebastián Hernández Elías</dd></div>
+          <div><dt>Carnet</dt><dd>HE24006</dd></div>
+          <div><dt>Asignatura</dt><dd>Técnicas de Programación en Internet</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <main class="limitado">
+      <section aria-labelledby="guias">
+        <p class="etiqueta azul">Desarrollo de guías</p>
+        <h2 id="guias">Demostraciones</h2>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <p class="numero">Guía 44b</p>
+            <h3>AJAX con XMLHttpRequest</h3>
+            <p>Ejemplos de carga asíncrona de TXT, HTML, XML y JSON, junto con las respuestas de análisis.</p>
+            <a href="HE24006-Ajax/index.html">Abrir práctica AJAX <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tarjeta">
+            <p class="numero">Guía 44c</p>
+            <h3>Fetch API</h3>
+            <p>Ejemplos de consultas asíncronas mediante promesas, texto, XML y JSON.</p>
+            <a href="HE24006-APIFetch/index.html">Abrir práctica Fetch <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tarjeta">
+            <p class="numero">Guía 44d</p>
+            <h3>FileReader y descargas</h3>
+            <p>Lectura local de archivos y generación de descargas TXT, JSON y CSV con Blob.</p>
+            <a href="HE24006-FileAPI/index.html">Abrir práctica File API <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tarjeta">
+            <p class="numero">Guía 61a</p>
+            <h3>Pruebas de Web Services</h3>
+            <p>Consultas Fetch a APIs públicas y un entorno de práctica para las operaciones CRUD.</p>
+            <a href="HE24006-ApiTest/TEST_API_FETCH.html">Abrir práctica de APIs <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="tarjeta destacada">
+            <p class="numero">Guía 61b</p>
+            <h3>Catálogo con API REST</h3>
+            <p>Aplicación personalizada que consume Fake Store API, filtra por categoría, ordena por precio y muestra el rating.</p>
+            <a href="HE24006-ApiWebsite/index.html">Abrir catálogo de productos <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="conclusiones" aria-labelledby="conclusiones">
+        <p class="etiqueta azul">Síntesis de aprendizaje</p>
+        <h2 id="conclusiones">Conclusiones</h2>
+        <ol>
+          <li>Las solicitudes asíncronas permiten actualizar partes concretas de una interfaz sin recargar toda la página, por lo que mejoran la interacción y reducen trabajo innecesario del navegador.</li>
+          <li>XMLHttpRequest permite comprender el ciclo HTTP de bajo nivel; Fetch ofrece una sintaxis basada en promesas más clara, pero exige verificar <code>response.ok</code> porque un error HTTP no siempre rechaza la promesa.</li>
+          <li>La File API permite procesar archivos elegidos por el usuario sin enviarlos a un servidor. FileReader facilita las vistas previas y Blob permite crear descargas generadas desde el navegador.</li>
+          <li>Las APIs REST organizan recursos mediante URL y métodos HTTP. GET consulta datos, POST crea recursos, PUT o PATCH actualiza y DELETE elimina; las operaciones que cambian datos deben ejecutarse con cuidado.</li>
+          <li>Al integrar una API en una página conviene separar la consulta, el manejo de errores y el renderizado. Esto hace que el sitio sea más entendible, reutilizable y fácil de probar.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer><div class="limitado">HE24006 · David Sebastián Hernández Elías · Técnicas de Programación en Internet · TPI115</div></footer>
+  </body>
+</html>

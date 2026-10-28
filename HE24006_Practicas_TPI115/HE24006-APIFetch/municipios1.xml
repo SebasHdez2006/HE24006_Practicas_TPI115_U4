@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<pais nombre="El Salvador">
+<departamento id="1">
+ <municipio>
+ <name>San Salvador</name>
+ </municipio>
+ <municipio>
+ <name>San Martin</name>
+ </municipio>
+ <municipio>
+ <name>San Marcos</name>
+ </municipio>
+ <municipio>
+ <name>Aguilares</name>
+ </municipio>
+</departamento>
+</pais>

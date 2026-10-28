@@ -1,0 +1,3 @@
+# Archivos de base de datos locales que no deben exponerse en el sitio estático.
+*.mdb
+*.ldb

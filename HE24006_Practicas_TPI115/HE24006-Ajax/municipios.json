@@ -1,0 +1,9 @@
+{
+  "pais": {
+    "nombre": "El Salvador",
+    "departamento":[ {
+      "id": "1",
+      "municipio": ["San Salvador", "San Martin", "San Marcos", "Aguilares" ]
+       } ]
+    }
+}

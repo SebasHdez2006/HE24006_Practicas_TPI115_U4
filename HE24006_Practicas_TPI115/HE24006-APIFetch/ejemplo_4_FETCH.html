@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html >
+<html lang="es">
+
+<head>
+<meta charset="utf-8" >
+<title>Llenar un listbox con API FETCH </title>
+<script src="js/ObjTree.js"></script>
+<script>
+//IMPORTANTE
+//SE HA INCORPORADO LA LIBRERIA ObjTree.js para poder crear un objeto xml y analizar el arbol xml
+//a partir de la respuesta en formato texto
+
+function descargaArchivo() {
+// Obtener la instancia del objeto Fetch
+fetch('./municipios1.xml')
+.then(response => 
+{ 
+  if(response.status===200) 
+     return response.text();
+  else return "";
+})
+.then(texto=> {
+  if(texto!="") {
+    var xotree = new XML.ObjTree();
+    var tree = xotree.parseXML( texto );
+        
+        //las 4 siguientes lineas son equivalentes entre si para hacer referencia a la lista de municipios
+        //descomente la linea que desea usar y comente la que ya no usará
+        //var municipios=tree["pais"].departamento.municipio;
+        //var municipios=tree["pais"]["departamento"].municipio;
+        //var municipios=tree.pais["departamento"].municipio;
+        var municipios=tree.pais.departamento["municipio"];
+        //cualquiera de las 4 lineas anteriores devuelve los elementos municipio que estan dentro del elemento
+        //departamento dentro del elemento pais.
+        //ANALICE EL ARCHIVO XML, EL CUAL LO ENCONTRARA EN LA CARPETA DE EJEMPLOS
+        //VEA Y ESTUDIE LA ESTRUCTURA DEL ARCHIVO municipios1.xml
+            
+     var options="",items=""; 
+               
+     for(i=0;i<municipios.length;i++){   //aca abajo se extrae el contenido del tag name de cada municipio
+        options+="<option value='"+(i+1)+"'>"+municipios[i].name+"</option>";
+		    items+=("<li>"+municipios[i].name+"</li>");
+      }
+      window.document.getElementById('menu').innerHTML=options; 
+      window.document.getElementById('bloque').innerHTML=texto;
+ 	    window.document.getElementById('lista').innerHTML="<ol>"+items+"</ol>"; 
+    }
+  });
+}
+// Preparar la funcion de respuesta
+
+// Realizar peticion HTTP
+
+ window.onload = descargaArchivo;
+</script>
+<style type="text/css">
+#forma {border-style:solid;border-color:red;}
+#bloque {border-style:solid;border-color:blue;}
+
+</style>
+
+</head>
+
+<body>
+<form method="post" action="" id="forma">
+	Departamento: San Salvador<br />
+	Municipio:
+<select name="menu" id="menu">
+</select> esta lista ha sido llenada a partir del archivo municipios.json
+</form>
+<p>despliegue de la respuesta dentro del tag pre</p>
+<pre id="bloque">
+
+</pre>
+El anterior bloque ha sido llenado a partir del archivo municipios.json
+<div id="lista">
+
+</div>
+La anterior lista ha sido llenada a partir del archivo municipios.json
+</body>
+
+</html>

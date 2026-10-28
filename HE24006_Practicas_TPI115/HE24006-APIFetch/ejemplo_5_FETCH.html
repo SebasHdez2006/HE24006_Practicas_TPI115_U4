@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html >
+<html lang="es">
+
+<head>
+<meta charset="utf-8" >
+<title>Llenar un listbox con API FETCH </title>
+<script>
+function descargaArchivo() {
+// Obtener la instancia del objeto Fetch
+fetch('./municipios.json')
+.then(response => 
+{ 
+  if(response.status===200) 
+     return response.json();
+  else return {};
+})
+.then(objeto=> {
+  if(objeto.hasOwnProperty("pais")) {
+     var municipios=objeto.pais.departamento[0].municipio;
+        //ANALICE EL ARCHIVO JSON, EL CUAL LO ENCONTRARA EN LA CARPETA DE EJEMPLOS
+        //VEA Y ESTUDIE LA ESTRUCTURA DEL ARCHIVO municipios.json
+     var options="",items=""; 
+               
+     for(i=0;i<municipios.length;i++){   //aca abajo se extrae el contenido del array municipio
+        options+="<option value='"+(i+1)+"'>"+municipios[i]+"</option>";
+		    items+=("<li>"+municipios[i]+"</li>");
+      }
+      window.document.getElementById('menu').innerHTML=options; 
+      window.document.getElementById('bloque').innerHTML=JSON.stringify(objeto);
+ 	    window.document.getElementById('lista').innerHTML="<ol>"+items+"</ol>"; 
+    }
+  });
+}
+// Preparar la funcion de respuesta
+
+// Realizar peticion HTTP
+
+ window.onload = descargaArchivo;
+</script>
+<style type="text/css">
+#forma {border-style:solid;border-color:red;}
+#bloque {border-style:solid;border-color:blue;}
+
+</style>
+
+</head>
+
+<body>
+<form method="post" action="" id="forma">
+	Departamento: San Salvador<br />
+	Municipio:
+<select name="menu" id="menu">
+</select> esta lista ha sido llenada a partir del archivo municipios.json
+</form>
+<p>despliegue de la respuesta dentro del tag pre</p>
+<pre id="bloque">
+
+</pre>
+El anterior bloque ha sido llenado a partir del archivo municipios.json
+<div id="lista">
+
+</div>
+La anterior lista ha sido llenada a partir del archivo municipios.json
+</body>
+
+</html>

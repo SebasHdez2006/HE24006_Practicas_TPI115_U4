@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conclusiones | Guía 44c | HE24006</title>
+    <link rel="stylesheet" href="estilo-practica.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <p class="etiqueta">TPI115 · Guía 44c · Evidencia</p>
+      <h1>Conclusiones sobre Fetch API</h1>
+      <p>David Sebastián Hernández Elías · HE24006 · Técnicas de Programación en Internet</p>
+    </header>
+    <main>
+      <article class="panel">
+        <h2>Flujo de una petición con Fetch</h2>
+        <ol class="lista-enlaces">
+          <li>Se invoca <code>fetch(url, opciones)</code>; el método devuelve una promesa que representa la petición HTTP.</li>
+          <li>El primer <code>then</code> recibe un objeto <code>Response</code>. Antes de leer el cuerpo se comprueban <code>response.ok</code> o <code>response.status</code>.</li>
+          <li>Según el tipo de recurso, se transforma el cuerpo con métodos como <code>response.text()</code>, <code>response.json()</code>, <code>response.blob()</code> o <code>response.formData()</code>.</li>
+          <li>El siguiente <code>then</code> recibe los datos ya convertidos y los usa para actualizar el DOM.</li>
+          <li>Un <code>catch</code> maneja errores de red o los errores lanzados al validar la respuesta HTTP.</li>
+        </ol>
+      </article>
+
+      <article class="panel destacado">
+        <h2>Conclusiones</h2>
+        <ol class="lista-enlaces">
+          <li>Fetch ofrece una forma moderna y legible de realizar solicitudes asíncronas mediante promesas, lo cual facilita encadenar la recepción, conversión y presentación de datos.</li>
+          <li>Los ejemplos demostraron que la misma estructura de Fetch permite recuperar texto, insertar HTML y procesar datos XML o JSON, cambiando únicamente el método que interpreta la respuesta.</li>
+          <li>Una respuesta HTTP como 404 no activa por sí sola <code>catch</code>; por eso es indispensable revisar <code>response.ok</code> o <code>response.status</code> y lanzar un error cuando la respuesta no sea satisfactoria.</li>
+          <li>Al ejecutarse desde un servidor web, Fetch respeta las reglas de origen y permite trabajar correctamente con archivos locales del proyecto sin depender de una recarga completa de la página.</li>
+        </ol>
+        <p><a class="boton" href="index.html">Volver a los ejemplos Fetch</a></p>
+      </article>
+    </main>
+    <footer>HE24006 · David Sebastián Hernández Elías · TPI115</footer>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>HOLA MUNDO Y ENCABEZADOS CON AJAX</title>
+<script type="text/javascript">
+
+//clase javascript para objetos ajax
+//una clase se crea como una funcion, lacual es a su vez el constructor
+//para indicar una propiedad o metodo de la clase se debe usar this
+function objetoAjax(met,url,procesador) {
+this.url=url;
+this.met=met;
+this.xmlobj=crearObj();
+this.procesador=procesador;//guarda referencia a la funcion que procesa la respuesta
+this.ejecutar=ejecutar;//referencia al método ejecutar
+}
+
+
+//funcion que crea un objeto xmlhttprequest, devuelve un apuntador a una instancia
+function crearObj() {
+  // Obtener la instancia del objeto XMLHttpRequest
+  if(window.XMLHttpRequest) {
+    return new XMLHttpRequest();
+  }
+  else if(window.ActiveXObject) {
+    return new ActiveXObject("Microsoft.XMLHTTP");
+  }
+}
+
+//este método es miembro de la clase objetoAJAX
+function ejecutar() {
+// Preparar la funcion de respuesta
+this.xmlobj.onreadystatechange = this.procesador;
+
+// Realizar peticion HTTP
+this.xmlobj.open(this.met, this.url, true);
+this.xmlobj.send(null);
+}
+
+
+
+//funcion que procesa la respuesta en el objeto 1
+function muestraContenido1() {
+
+  if(this.readyState == 4) {
+     if(this.status == 200) {
+       var texto=this.responseText;
+       window.document.getElementById('parrafo1').innerHTML=texto;       
+     }
+   }
+ }
+
+//funcion que procesa la respuesta en el objeto 2
+function muestraContenido2() {
+  if(this.readyState == 4) {
+     if(this.status == 200) {
+       var texto=this.responseText;
+       window.document.getElementById('bloque1').innerHTML=texto;       
+     }
+   }
+ }
+
+
+var obj1=new objetoAjax('GET','contenido1.txt',muestraContenido1);
+var obj2=new objetoAjax('GET','contenido2.txt',muestraContenido2);
+
+//Reprogramacion del evento onload de la pagina por medio de una función anónima
+//como pueden ver la función anónimo no posee nombre solo se usa la palabra reservada
+//function y los paréntesis vacios luego entre llaves {} se colocan las instrucciones a ejecutar
+window.onload = function (){window.alert('ACEPTAR para continuar');obj1.ejecutar();obj2.ejecutar();}
+
+</script>
+<style type="text/css">
+#parrafo1 {border-style:dotted;border-color:blue;}
+#bloque1 {border-style:solid;border-color:red;}
+}
+</style>
+</head>
+
+<body>
+<p id="parrafo1">DENTRO DE ESTE PARRAFO SE COLOCARA contenido1.txt</p>
+<div id="bloque1">DENTRO DE ESTE BLOQUE SE COLOCARA contenido2.txt</div>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Respuestas y conclusiones | Guía 44b | HE24006</title>
+    <link rel="stylesheet" href="estilo-practica.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <p class="etiqueta">TPI115 · Guía 44b · Evidencia</p>
+      <h1>Respuestas y conclusiones sobre AJAX</h1>
+      <p>David Sebastián Hernández Elías · HE24006 · Técnicas de Programación en Internet</p>
+    </header>
+    <main>
+      <article class="panel">
+        <h2>Preguntas de análisis</h2>
+        <ol class="lista-enlaces">
+          <li>
+            <strong>¿Qué es AJAX? ¿Es una tecnología o una combinación de tecnologías?</strong><br />
+            AJAX significa <em>Asynchronous JavaScript and XML</em>. Es una técnica de desarrollo web y una combinación de JavaScript, DOM, HTTP, HTML/CSS y formatos de intercambio como texto, XML o JSON. Permite solicitar y procesar datos sin recargar por completo la página.
+          </li>
+          <li>
+            <strong>¿Qué es XMLHttpRequest y qué papel juega dentro de AJAX?</strong><br />
+            Es una API del navegador representada por un objeto JavaScript. Permite crear solicitudes HTTP, enviar datos y recibir respuestas de manera asíncrona o síncrona. En AJAX es el mecanismo clásico que comunica la página con el servidor.
+          </li>
+          <li>
+            <strong>¿Cuáles son las propiedades y métodos principales de XMLHttpRequest?</strong><br />
+            Las propiedades más usadas son <code>onreadystatechange</code>, <code>readyState</code>, <code>responseText</code>, <code>responseXML</code>, <code>response</code>, <code>responseType</code>, <code>status</code>, <code>statusText</code> y <code>timeout</code>. Sus métodos habituales son <code>open()</code> para configurar la petición, <code>send()</code> para enviarla, <code>setRequestHeader()</code> para agregar cabeceras, <code>getResponseHeader()</code> y <code>getAllResponseHeaders()</code> para leer cabeceras, y <code>abort()</code> para cancelarla.
+          </li>
+          <li>
+            <strong>¿Cuáles son los valores de readyState?</strong><br />
+            <code>0</code> significa que la solicitud no se ha inicializado; <code>1</code>, que se abrió y se estableció la conexión; <code>2</code>, que se recibieron las cabeceras; <code>3</code>, que la respuesta se está descargando; y <code>4</code>, que la operación terminó y la respuesta está lista para procesarse.
+          </li>
+          <li>
+            <strong>¿Cuáles son los valores y el significado de status?</strong><br />
+            <code>status</code> contiene el código HTTP devuelto por el servidor. Los códigos 1xx son informativos, 2xx indican éxito, 3xx redirección, 4xx un error de la solicitud del cliente y 5xx un error del servidor. En esta práctica, <code>200</code> indica éxito; también son frecuentes <code>201</code> (creado), <code>204</code> (sin contenido), <code>400</code> (solicitud inválida), <code>401</code> (no autenticado), <code>403</code> (prohibido), <code>404</code> (no encontrado) y <code>500</code> (error interno del servidor).
+          </li>
+          <li>
+            <strong>¿Cuál es el procedimiento para usar XMLHttpRequest?</strong><br />
+            Se crea el objeto, se registra una función de respuesta —por ejemplo en <code>onreadystatechange</code>—, se configura la petición con <code>open(método, URL, true)</code>, se definen cabeceras si hacen falta y se ejecuta <code>send()</code>. La función comprueba que <code>readyState === 4</code> y un estado HTTP exitoso antes de usar la respuesta y actualizar el DOM.
+          </li>
+          <li>
+            <strong>¿Qué características permiten reconocer una página que usa AJAX?</strong><br />
+            Su contenido cambia parcial y dinámicamente mientras la página permanece abierta: aparecen resultados de búsqueda, filtros, mensajes, notificaciones o datos de un formulario sin una recarga completa. En las herramientas de desarrollo se observan solicitudes Fetch/XHR realizadas después de la carga inicial.
+          </li>
+          <li>
+            <strong>¿Qué ventajas tiene AJAX frente al ciclo tradicional de petición-respuesta?</strong><br />
+            Reduce transferencias innecesarias, permite actualizar solo el componente afectado, mejora la sensación de rapidez e interactividad y conserva el contexto del usuario. También separa mejor los datos que se solicitan del modo en que se muestran en la interfaz.
+          </li>
+          <li>
+            <strong>¿Qué sitios web usan AJAX?</strong><br />
+            Ejemplos habituales son Gmail al cargar correos y cambiar etiquetas, Google Maps al mover y buscar en el mapa, GitHub al cargar incidencias o comentarios dinámicamente y YouTube al mostrar sugerencias, comentarios o resultados de búsqueda sin una recarga completa.
+          </li>
+          <li>
+            <strong>Liste cinco aplicaciones o casos de uso para AJAX.</strong><br />
+            (1) autocompletado de búsquedas, (2) filtros de un catálogo de productos, (3) validación de campos de formulario mientras se escriben, (4) actualización de mensajes y notificaciones, y (5) paneles que consultan métricas o datos de seguimiento periódicamente.
+          </li>
+        </ol>
+      </article>
+
+      <article class="panel destacado">
+        <h2>Conclusiones</h2>
+        <ol class="lista-enlaces">
+          <li>AJAX permite construir interfaces más ágiles porque actualiza regiones concretas del documento en lugar de recargar toda la página.</li>
+          <li>La correcta validación de <code>readyState</code> y <code>status</code> evita procesar respuestas incompletas o fallidas.</li>
+          <li>El formato de la respuesta determina cómo se procesa: <code>responseText</code> sirve para texto o HTML, <code>responseXML</code> para XML y JSON debe convertirse a un objeto JavaScript antes de recorrer sus datos.</li>
+          <li>La práctica muestra que la comunicación asíncrona no sustituye la lógica de la interfaz: después de recibir los datos todavía es necesario validarlos y actualizar el DOM de forma clara y segura.</li>
+        </ol>
+        <p><a class="boton" href="index.html">Volver a los ejemplos AJAX</a></p>
+      </article>
+    </main>
+    <footer>HE24006 · David Sebastián Hernández Elías · TPI115</footer>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>HOLA MUNDO CON AJAX, en parrafo</title>
+<script type="text/javascript">
+
+function descargaArchivo() {
+// Obtener la instancia del objeto XMLHttpRequest
+  if(window.XMLHttpRequest) {
+    peticion_http = new XMLHttpRequest();
+  }
+  else if(window.ActiveXObject) {
+    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+// Preparar la funcion de respuesta
+peticion_http.onreadystatechange = muestraContenido;//se asigna una referencia o apuntador a la función
+// Realizar peticion HTTP
+peticion_http.open('GET', 'contenido1.txt', true);
+peticion_http.send(null);
+
+//función que procesa la respuesta
+function muestraContenido() {
+  if(peticion_http.readyState == 4) {
+     if(peticion_http.status == 200) {
+       var texto=peticion_http.responseText;
+       window.document.getElementById('parrafo').innerHTML=texto;       
+     }
+   }
+ }
+}
+ window.onload = descargaArchivo;//cuando se usa sin parentesis el nombre de una función se entiende como apuntador
+
+</script>
+<style type="text/css">
+#parrafo {border-style:dotted;border-color:blue;}
+}
+</style>
+
+</head>
+
+<body>
+<!-- se ha usado un id para identificar al parrafo desde javascript -->
+<p id="parrafo"></p>
+<!-- TOME NOTA DE QUE ESTE DOCUMENTO ES UN DOCUMENTO VACIO -->
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Llenar un listbox con ajax</title>
+<script type="text/javascript">
+//IMPORTANTE
+//SE HA INCORPORADO LA LIBRERIA ObjTree.js para poder crear un objeto xml y analizar el arbol xml
+//a partir de la respuesta en formato texto
+
+function descargaArchivo() {
+// Obtener la instancia del objeto XMLHttpRequest
+  if(window.XMLHttpRequest) {
+    peticion_http = new XMLHttpRequest();
+  }
+  else if(window.ActiveXObject) {
+    peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+// Preparar la funcion de respuesta
+peticion_http.onreadystatechange = muestraContenido;
+// Realizar peticion HTTP
+peticion_http.open('GET', 'municipios.json', true);
+peticion_http.send(null);
+
+function muestraContenido() {
+  if(peticion_http.readyState == 4) {
+     if(peticion_http.status == 200) {
+       //la respuesta que es el archivo municipios.json en formato texto se almacena en la variable texto
+       var texto=peticion_http.responseText;
+       
+       window.document.getElementById('bloque').innerHTML=texto; 
+        var objeto = JSON.parse(texto);
+
+        var municipios=objeto.pais.departamento[0].municipio;
+        //ANALICE EL ARCHIVO JSON, EL CUAL LO ENCONTRARA EN LA CARPETA DE EJEMPLOS
+        //VEA Y ESTUDIE LA ESTRUCTURA DEL ARCHIVO municipios1.json
+               
+               var options="",items=""; 
+               
+               for(i=0;i<municipios.length;i++){   //aca abajo se extrae el contenido del tag name de cada municipio
+                 options+="<option value='"+(i+1)+"'>"+municipios[i]+"</option>";
+				 items+="<li>"+municipios[i]+"</li>";
+                }
+                  window.document.getElementById('menu').innerHTML=options; 
+				  window.document.getElementById('lista').innerHTML="<ul type=disc>"+items+"</ul>"; 
+                  
+     }
+   }
+ }
+}
+ window.onload = descargaArchivo;
+</script>
+<style type="text/css">
+#forma {border-style:solid;border-color:red;}
+#bloque {border-style:solid;border-color:blue;}
+
+</style>
+
+</head>
+
+<body>
+<form method="post" action="" id="forma">
+	Departamento: San Salvador<br />
+	Municipio:
+<select name="menu" id="menu">
+</select> esta lista ha sido llenada a partir del archivo municipios.json
+</form>
+<p>despliegue de la respuesta dentro del tag pre</p>
+<pre id="bloque">
+
+</pre>
+El anterior bloque ha sido llenado a partir del archivo municipios.json
+<div id="lista">
+
+</div>
+La anterior lista ha sido llenada a partir del archivo municipios.json
+</body>
+
+</html>
