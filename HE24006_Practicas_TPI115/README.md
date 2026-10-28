@@ -2,6 +2,11 @@
 
 Portafolio de prácticas de David Sebastián Hernández Elías para la asignatura Técnicas de Programación en Internet (TPI115).
 
+## Acceso en línea
+
+- **Sitio publicado:** https://sebashdez2006.github.io/HE24006_Practicas_TPI115_U4/HE24006_Practicas_TPI115/
+- **Repositorio:** https://github.com/SebasHdez2006/HE24006_Practicas_TPI115_U4
+
 Abra `index.html` desde un servidor HTTP para navegar todas las guías. Por ejemplo, desde esta carpeta puede ejecutar:
 
 ```powershell
