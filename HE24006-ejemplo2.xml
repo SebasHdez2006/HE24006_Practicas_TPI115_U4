@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="HE24006-ejemplo2.css"?>
+<!-- ejemplo2.xml HE24006, Nombre: David Sebastián Hernández Elías -->
+<pais xmlns:html="http://www.w3.org/1999/xhtml" nombre="El Salvador">
+    
+    <html:a href="index.html">Volver al Menú Principal</html:a>
+    <html:br/>
+
+    <departamento id="1" nombre="San Salvador">
+        <cabecera>San Salvador</cabecera>
+        <habitantes>1,700,000</habitantes>
+        <altura>545 MSNM</altura>
+    </departamento>
+</pais>

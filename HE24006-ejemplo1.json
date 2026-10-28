@@ -1,0 +1,20 @@
+{
+	"fichero": {
+		"a": {
+			"_href": "index.html",
+			"__prefix": "html",
+			"__text": "Volver al Menú Principal"
+		},
+		"br": {
+			"__prefix": "html"
+		},
+		"ficha": {
+			"nombre": "Antonio",
+			"apellido": "Barbero",
+			"direccion": "Calle de Los Andes, 45",
+			"_id": "1",
+			"_fechaingreso": "1/11/2012"
+		},
+		"_xmlns:html": "http://www.w3.org/1999/xhtml"
+	}
+}

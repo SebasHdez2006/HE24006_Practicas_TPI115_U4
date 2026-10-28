@@ -1,0 +1,64 @@
+{
+	"fichero": {
+		"a": {
+			"_href": "index.html",
+			"__prefix": "html",
+			"__text": "Volver al Menú Principal"
+		},
+		"br": {
+			"__prefix": "html"
+		},
+		"ficha": [
+			{
+				"nombre": "Antonio",
+				"apellido": "Barbero",
+				"direccion": "Calle de Los Andes, 45",
+				"_id": "1",
+				"_fechaingreso": "1/11/2012"
+			},
+			{
+				"nombre": "David Sebastián",
+				"apellido": "Hernández Elías",
+				"direccion": "Soyapango, San Salvador Este",
+				"contacto": {
+					"telefono": {
+						"_tipo": "celular",
+						"__text": "7020-0980"
+					},
+					"email": "he24006@ues.edu.sv",
+					"website": {
+						"_url": "http://xml.he24006.tpi"
+					}
+				},
+				"_id": "2",
+				"_fechaingreso": "10/09/2026"
+			},
+			{
+				"nombre": "ASO",
+				"apellido": "FIA",
+				"direccion": "Ciudad Universitaria",
+				"contacto": {
+					"telefono": {
+						"_tipo": "fijo",
+						"__text": "2255-0000"
+					},
+					"email": "cmartinez@gmail.com",
+					"website": {
+						"_url": "https://www.aseisi.com"
+					}
+				},
+				"documentacion": {
+					"dui": "09876543-2",
+					"isss": "987654321",
+					"afp": {
+						"_numero": "123456789",
+						"_institucion": "ASEISI"
+					}
+				},
+				"_id": "3",
+				"_fechaingreso": "10/09/2026"
+			}
+		],
+		"_xmlns:html": "http://www.w3.org/1999/xhtml"
+	}
+}

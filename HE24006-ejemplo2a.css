@@ -1,0 +1,72 @@
+/* HE24006-ejercicio2a.css - David Sebastián Hernández Elías */
+pais {
+    display: block;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e2e3e5;
+}
+
+pais::before {
+    content: "País: " attr(nombre) " | Moneda: " attr(moneda) " | Código: " attr(codigoTelefonico) " | Área: " attr(areaTerritorial);
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #383d41;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #383d41;
+    padding-bottom: 10px;
+}
+
+idiomas {
+    display: block;
+    background: #cce5ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+oficial,
+autoctono,
+segundoIdioma {
+    display: block;
+    color: #004085;
+    margin: 3px 0;
+}
+
+oficial::before {
+    content: "Idioma Oficial: ";
+    font-weight: bold;
+}
+
+autoctono::before {
+    content: "Idioma Autóctono: ";
+    font-weight: bold;
+}
+
+segundoIdioma::before {
+    content: "Segundo Idioma: ";
+    font-weight: bold;
+}
+
+departamento {
+    display: block;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+cabecera {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+habitantes,
+altura {
+    display: block;
+    margin: 5px 0;
+    color: #495057;
+}

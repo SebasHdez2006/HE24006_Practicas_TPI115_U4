@@ -1,0 +1,48 @@
+/* HE24006-ejercicio2.css - David Sebastián Hernández Elías */
+pais {
+    display: block;
+    background-color: #d4edda;
+    padding: 20px;
+    font-family: Tahoma, sans-serif;
+}
+
+departamento {
+    display: block;
+    background-color: #ffffff;
+    margin: 15px 0;
+    padding: 15px;
+    border-left: 6px solid #28a745;
+}
+
+cabecera {
+    display: block;
+    font-weight: bold;
+    color: #155724;
+    font-size: 18px;
+}
+
+habitantes {
+    display: block;
+    color: #333;
+    margin-top: 5px;
+}
+
+habitantes::before {
+    content: "Habitantes: ";
+    font-weight: bold;
+}
+
+altura {
+    display: block;
+    color: #666;
+    font-style: italic;
+}
+
+departamento::before {
+    content: "Departamento ID: " attr(id);
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}

@@ -1,0 +1,71 @@
+/* HE24006-ejercicio1b.css - David Sebastián Hernández Elías */
+fichero {
+    display: block;
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+ficha {
+    display: block;
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nombre,
+apellido {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0056b3;
+    margin-right: 5px;
+}
+
+direccion {
+    display: block;
+    color: #495057;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+contacto {
+    display: block;
+    margin-top: 10px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 10px;
+}
+
+telefono,
+email,
+website {
+    display: block;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+documentacion {
+    display: block;
+    background-color: #ffeeba;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+dui,
+isss,
+afp {
+    display: block;
+    color: #856404;
+}
+
+telefono::before {
+    content: "📞 " attr(tipo) ": ";
+    font-weight: bold;
+}
+
+afp::before {
+    content: "AFP " attr(institucion) " (N° " attr(numero) "): ";
+    font-weight: bold;
+}
